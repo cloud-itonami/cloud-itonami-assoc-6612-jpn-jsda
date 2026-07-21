@@ -20,13 +20,13 @@ A **read-only reference/archive** catalog — not an Advisor⊣Governor
 actuation actor. It proposes or executes nothing on the association's
 behalf.
 
-Coverage is reported honestly (see `association.facts/coverage`): an
-association not in `catalog` has **no spec-basis**, full stop — never
+Coverage is reported honestly by the fail-closed exported Kotoba ABI: an
+association not explicitly admitted has **no spec-basis**, full stop — never
 fabricate one.
 
 ## Data
 
-- `src/association/facts.cljc` — the catalog, source of truth.
+- `src/association_facts.kotoba` — the sole production catalog authority.
 - `schema/association-rule.edn` — DataScript schema.
 - `data/datascript-tx.edn` — derived DataScript tx-data (query this
   alongside other `cloud-itonami`/`etzhayyim` compliance-fact sources via
@@ -36,6 +36,12 @@ Both entries cite an official [jsda.or.jp](https://www.jsda.or.jp/)
 document, independently WebFetch-verified against the live page
 (2026-07-14) — titles and enactment/revision dates read back from the
 actual document listing, not guessed.
+
+The catalog compiles through `kotoba-lang/compiler` to the reference evaluator,
+restricted JavaScript, and typed WebAssembly. Clojure/JVM and Node are test and
+compiler hosts only; neither is production authority. Compatibility is checked
+by observable values, typed ABI, empty effects, bounds, and fail-closed
+rejections—not compiler-output byte identity.
 
 ## License
 
